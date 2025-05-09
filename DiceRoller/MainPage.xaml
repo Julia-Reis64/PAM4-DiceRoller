@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceRoller.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            <!-- Imagens de ambos os dados -->
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image x:Name="Dado1Imagem"
+                       Source="dice1.png" <!-- Ambos começam com a mesma face -->
+                    HeightRequest="150"
+                       Aspect="AspectFit" />
+                    <Image x:Name="Dado2Imagem"
+                       Source="dice1.png"
+                       HeightRequest="150"
+                       Aspect="AspectFit" />
+            </HorizontalStackLayout>
+
+            <!-- Picker para a soma dos dados -->
+            <Picker x:Name="EscolhaJogador" Title="Escolha a soma dos dados">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:Int32}">
+                        <x:Int32>2</x:Int32>
+                        <x:Int32>3</x:Int32>
+                        <x:Int32>4</x:Int32>
+                        <x:Int32>5</x:Int32>
+                        <x:Int32>6</x:Int32>
+                        <x:Int32>7</x:Int32>
+                        <x:Int32>8</x:Int32>
+                        <x:Int32>9</x:Int32>
+                        <x:Int32>10</x:Int32>
+                        <x:Int32>11</x:Int32>
+                        <x:Int32>12</x:Int32>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Botão para lançar os dados -->
+            <Button x:Name="RollButton"
+                    Text="Lançar Dados"
+                    Clicked="RollButton_Clicked"
+                    HorizontalOptions="Fill" />
+
+            <!-- Exibição dos resultados -->
+            <Label x:Name="SomaDadosLabel"
+                   Text="Soma dos dados: 0"
+                   HorizontalOptions="Center"/>
+
+            <Label x:Name="TotalVitoriasLabel"
+                   Text="Vitórias totais: 0"
+                   HorizontalOptions="Center"/>
+
+            <Label x:Name="VitoriasSequenciaLabel"
+                   Text="Vitórias seguidas: 0"
+                   HorizontalOptions="Center"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
